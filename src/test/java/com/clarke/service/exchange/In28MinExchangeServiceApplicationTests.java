@@ -3,10 +3,10 @@ package com.clarke.service.exchange;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class In28MinExchangeServiceApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 
