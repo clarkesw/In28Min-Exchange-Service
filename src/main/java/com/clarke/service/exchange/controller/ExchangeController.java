@@ -1,6 +1,7 @@
 package com.clarke.service.exchange.controller;
 
-import com.clarke.service.exchange.beans.CurrencyConversion;
+import com.clarke.service.exchange.beans.Exchange;
+import com.clarke.service.exchange.repository.CurrencyExchangeRepository;
 import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -13,15 +14,18 @@ public class ExchangeController {
     
     @Autowired
     private Environment env;
+    
+    @Autowired
+    private CurrencyExchangeRepository repo;
 
     @GetMapping("/currency-exchange/from/{startCurrency}/to/{endCurrency}")
-    public CurrencyConversion getConversionInfo(
+    public Exchange getConversionInfo(
                 @PathVariable String startCurrency, 
                 @PathVariable String endCurrency){
-        CurrencyConversion currencyConversion = new CurrencyConversion(1, startCurrency, endCurrency, 
-                BigDecimal.valueOf(1), "8000 instance-id");  
+        Exchange currencyConversion = 
+                repo.findByFromCurrencyAndToCurrency(startCurrency, endCurrency);  
         
-        String port = env.getProperty("server.local.port");
+        String port = env.getProperty("local.server.port");
         currencyConversion.setEnvironment(port);
         return currencyConversion;  
     }

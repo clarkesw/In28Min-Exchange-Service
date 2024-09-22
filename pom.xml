@@ -11,8 +11,8 @@
     <groupId>com.clarke.service.exchange</groupId>
     <artifactId>exchange-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>In28Min Exchange Service</name>
-    <description>In28Min Exchange Service</description>
+    <name>In28Min Exchange</name>
+    <description>In28Min Exchange</description>
     <properties>
             <java.version>17</java.version>
             <spring-cloud.version>2023.0.3</spring-cloud.version>
@@ -30,7 +30,15 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>  
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
