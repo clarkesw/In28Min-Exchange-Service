@@ -56,9 +56,8 @@
             <scope>provided</scope>
         </dependency>   
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-spring-boot2</artifactId>
         </dependency>
     </dependencies>
     <dependencyManagement>
